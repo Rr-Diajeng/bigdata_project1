@@ -1,0 +1,29 @@
+# all zip files
+*.zip
+*.csv
+
+# one specific zip
+backup.zip
+
+# all files in a folder
+Python Fundamentals I, II, and advanced-20260305/
+homework1_M11401854/
+Homework1-extra/
+
+test.ipynb
+
+# specific folder anywhere in repo
+**/data/
+**/img/
+
+# ignore multiple archive types
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# ignore temporary files
+*.tmp
+*.log
+.DS_Store

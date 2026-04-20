@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m pip install pandas scikit-learn --break-system-packages -q)",
+      "Bash(python3 -c \":*)"
+    ]
+  }
+}
