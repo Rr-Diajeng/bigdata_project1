@@ -7,20 +7,20 @@ import pandas as pd
 
 def clean_text(text: str) -> str:
     """
-    - lowercase
-    - strip whitespace at ends
-    - remove URLs and non a–z chars: (http\\S+|www\\S+|[^a-z\\s])
-    - collapse multiple spaces into one
+    Basic text cleaning:
+    - Convert to string and strip whitespace
+    - Remove URLs
+    - Remove HTML tags
+    - Remove HTML entities
+    - Normalize whitespace
     """
     if pd.isna(text):
         return ""
 
-    text = str(text).lower().strip()
-    #remove URLs
+    text = str(text).strip()
     text = re.sub(r"http\S+|www\S+", " ", text)
-    #keep only letters a-z and spaces
-    text = re.sub(r"[^a-z\s]", " ", text)
-    #collapse multiple spaces
+    text = re.sub(r"<.*?>", " ", text)
+    text = re.sub(r"&[a-z]+;", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
